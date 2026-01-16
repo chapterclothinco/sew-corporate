@@ -1,6 +1,6 @@
 // ================================
-// The Mitzvah Studio
-// Custom Bar & Bat Mitzvah Merch
+// Sew Corporate
+// Custom Corporate Apparel
 // ================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -111,10 +111,10 @@ function initFAQ() {
 }
 
 // ================================
-// Scroll Reveal Animation
+// Fade In Animation on Scroll
 // ================================
 function initScrollReveal() {
-    const revealElements = document.querySelectorAll('.scroll-reveal');
+    const fadeElements = document.querySelectorAll('.fade-in');
 
     const observerOptions = {
         root: null,
@@ -126,13 +126,12 @@ function initScrollReveal() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Optionally unobserve after revealing
-                // observer.unobserve(entry.target);
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    revealElements.forEach(el => {
+    fadeElements.forEach(el => {
         observer.observe(el);
     });
 }
